@@ -25,7 +25,7 @@ namespace TeamQuizApp
         }
 
         // 現在の「正解数 / 合計問題数」と「正答率（％）」を計算し、
-        // 画面に表示しやすい文字列にして返す
+        // 画面に表示
         public string GetResult()
         {
             if (TotalCount == 0) return "正解数: 0 / 0 (正解数 0.0%) ";
