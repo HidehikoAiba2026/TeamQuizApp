@@ -44,6 +44,7 @@
             answerButton1.TabIndex = 0;
             answerButton1.Text = "button1";
             answerButton1.UseVisualStyleBackColor = true;
+            answerButton1.Click += answerButton_Click;
             // 
             // answerButton2
             // 
@@ -53,6 +54,7 @@
             answerButton2.TabIndex = 1;
             answerButton2.Text = "button2";
             answerButton2.UseVisualStyleBackColor = true;
+            answerButton2.Click += answerButton_Click;
             // 
             // answerButton3
             // 
@@ -62,6 +64,7 @@
             answerButton3.TabIndex = 2;
             answerButton3.Text = "button3";
             answerButton3.UseVisualStyleBackColor = true;
+            answerButton3.Click += answerButton_Click;
             // 
             // answerButton4
             // 
@@ -71,6 +74,7 @@
             answerButton4.TabIndex = 3;
             answerButton4.Text = "button4";
             answerButton4.UseVisualStyleBackColor = true;
+            answerButton4.Click += answerButton_Click;
             // 
             // questionLabel
             // 
