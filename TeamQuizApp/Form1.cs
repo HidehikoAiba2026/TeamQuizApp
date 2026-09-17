@@ -59,14 +59,14 @@ namespace TeamQuizApp
             // Button?（ヌル許容型）は、ボタン以外のものが原因で動いた場合は null になる
             Button? btn = sender as Button;
 
-            // クリックされたボタンが、1〜4番目のうち何番目のボタンか（0〜3のインデックス番号）をちょい調査
+            // クリックされたボタンが、1〜4番目のうち何番目のボタンか（0〜3のインデックス番号）を調査
             int index = Array.IndexOf(new[] { answerButton1, answerButton2, answerButton3, answerButton4 }, btn);
 
-            // 正誤判定を行うcheckerに、現在の問題（current）と選択されたボタンの番号（index）を渡し、
+            // 正誤判定を行う(checker.CheckerAnswer()メソッドの呼び出し)
             // 正解なら true、不正解なら false を変数 result に代入
             bool result = checker.CheckAnswer(current, index);
 
-            // scoreに、正誤結果（result）を記録
+            // score.Record()メソッドを実行し、正誤結果（result）を記録
             score.Record(result);
 
             // 三項演算子
@@ -74,6 +74,7 @@ namespace TeamQuizApp
             ui.LogResult(result ? "正解！" : "不正解...");
 
             // 現在の累計スコアを取得し、画面に続けて表示
+            // score.GetResult()メソッドを実行
             ui.LogResult(score.GetResult());
 
             // 次の問題を表示
@@ -86,7 +87,12 @@ namespace TeamQuizApp
         // 問題を乱数で表示
         private void LoadNextQuestion()
         {
+            // Question型変数(current)にQuestionLoader型変数loader
+            // のメソッドGetRandomQuestion()を実行した結果(乱数)を代入
             current = loader.GetRandomQuestion();
+
+            // UiUpdater型変数uiのメソッドShowQuestionを実行
+            // 次の問題文が表示される
             ui.ShowQuestion(current);
         }
     }
